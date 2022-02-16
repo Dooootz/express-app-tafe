@@ -9,6 +9,7 @@ const app = express();
 //Initialize dotenv package
 dotenv.config();
 
+//Establish +MongoDB connection
 Mongoose.Promise = global.Promise 
 Mongoose.connect(process.env.DATABASE_URI, OPTIONS, {
     useNewUrlParser: true,
