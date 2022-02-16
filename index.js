@@ -6,7 +6,9 @@ import res from "express/lib/response";
 
 const app = express();
 
+
 //Initialize dotenv package
+const dotenv = require("dotenv")
 dotenv.config();
 
 //Establish +MongoDB connection
