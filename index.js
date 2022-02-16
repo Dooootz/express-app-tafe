@@ -1,5 +1,5 @@
 import { Express } from "express";
-import routes from "./src/routes/routes";
+import { routes } from "./src/routes/routes";
 import { Mongoose } from "mongoose";
 import bodyParser from "body-parser";
 import res from "express/lib/response";
@@ -10,7 +10,7 @@ const app = express();
 dotenv.config();
 
 Mongoose.Promise = global.Promise 
-Mongoose.connect(process.env.DATABASE_URI, OPTIONS {
+Mongoose.connect(process.env.DATABASE_URI, OPTIONS, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -18,6 +18,12 @@ Mongoose.connect(process.env.DATABASE_URI, OPTIONS {
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-app.get('/',(request, response) => {
-    res.send('')
+routes(app);
+
+app.get('/',(req, res) => {
+    res.send(`server running on ${process.env.PORT}`)
+})
+
+app.listen(process.env.PORT, HOSTNAME = () => {
+    console.log(`server is running on post ${process.env.PORT}`)
 })
