@@ -2,8 +2,9 @@ import express from 'express';
 import { routes } from './src/routes/routes.js';
 import mongoose from 'mongoose';
 import bodyParser from "body-parser";
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 
+//
 const app = express();
 const PORT = 4000;
 
@@ -28,5 +29,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Your server is running on port ${PORT}`)
+    console.log(`ITS ALIVE!!! on http://localhost:${PORT}`)
 })
