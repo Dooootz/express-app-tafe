@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 
 //
 const app = express();
-const PORT = 4000;
+const PORT = 4001;
 
 // Initialises dotenv package
 dotenv.config();
