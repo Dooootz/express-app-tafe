@@ -26,7 +26,7 @@ export const addNewUser = (req, res) => {
         } else {
             // hide hashed password from end user
             user.hashPassword = undefined;
-            // return res status 201 & json data or user
+            // return res status 201 & json data of user
             return res.status(201).json(user);
         }
     })

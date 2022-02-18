@@ -30,7 +30,9 @@ export const UserSchema = new Schema({
     }
 });
 
-// decrypt & match user password 
+// access DB to compare & match passwords 
+// takes a callback function with 2 parameters 
+// uses the decrypted password & matches it with the encrypted one
 UserSchema.methods.comparePassword = (password, hashPassword) => {
     return bcrypt.compareSync(password, hashPassword);
 }

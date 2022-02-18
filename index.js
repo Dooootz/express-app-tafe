@@ -1,11 +1,13 @@
+// import necessary dependencies 
 import express from 'express';
 import { routes } from './src/routes/routes.js';
 import mongoose from 'mongoose';
 import bodyParser from "body-parser";
 import dotenv from 'dotenv';
 
-// initialize express
+// initialize express app
 const app = express();
+// instantiate PORT number
 const PORT = 4001;
 
 // Initialises dotenv package
@@ -14,7 +16,7 @@ dotenv.config();
 // MongoDB Connection
 mongoose.Promise = global.Promise; // deprecated
 // connects to mongoDB - takes in 2 parameters 
-//  first parameter uses dotenv to pull safely pull sensitive data from the .env file
+// first parameter uses dotenv to pull safely pull sensitive data from the .env file
 // second parameter is an object & not sure what it actually does?
 mongoose.connect(process.env.DATABASE_URI, {
     useNewUrlParser: true,

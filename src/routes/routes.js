@@ -1,4 +1,4 @@
-// import controller functions
+// import controller functions from controller file
 import {
     addNewUser,
     deleteUser,
@@ -16,6 +16,7 @@ export const routes = (app) => {
         .post(addNewUser);
 
     app.route('/user/:userID')
+        // match request id with DB id &....
         // UPDATE, PUT request to update user - could also use PATCH or POST
         .put(updateUser)
         // GET request to find user by ID
