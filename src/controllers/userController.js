@@ -12,7 +12,7 @@ const User = mongoose.model('User', UserSchema);
 export const addNewUser = (req, res) => {
     // instantiate new user - takes the request body as an arguement or parameter
     const newUser = new User(req.body);
-    // uses bcrypt to hash user password 
+    // uses bcrypt to hash user password -:- hashSync(data, salt, optional: callback)
     newUser.hashPassword = bcrypt.hashSync(req.body.password, 10);
 
     // .save function saves document by inserting new document to the DB 
