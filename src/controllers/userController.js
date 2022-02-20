@@ -2,6 +2,7 @@
 import mongoose from 'mongoose';
 // import our created User schema
 import { UserSchema } from "../models/userModel.js";
+// import bcrypt to hash all user passwords 
 import bcrypt from 'bcrypt';
 
 // makes a copy of the schema before executing queries to the DB 
